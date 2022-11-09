@@ -1,0 +1,7 @@
+{
+  "name": "ionic-iframe-experiments",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
