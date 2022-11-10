@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor() {
+    this.initializeApp();
+  }
+
+  initializeApp() {
+    this.setDarkMode(true);
+  }
+
+  private setDarkMode(forceDarkMode = false) {
+    if (forceDarkMode) {
+      document.body.classList.toggle('dark', true);
+      return;
+    }
+    const dark =
+      window.navigator.userAgent.includes('AndroidDarkMode') ||
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.body.classList.toggle('dark', dark);
+  }
 }
